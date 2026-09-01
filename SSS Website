@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Scholarship Success Pathway</title>
+
+  <meta
+    name="description"
+    content="Scholarship Success Pathway helps students discover educational opportunities, strengthen their profiles, and navigate applications through accessible resources and personalized guidance."
+  />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+    :root {
+      --navy: #101a33;
+      --navy-2: #172342;
+      --blue: #536cc8;
+      --blue-light: #eef1ff;
+      --background: #f7f8fb;
+      --text: #182033;
+      --muted: #687186;
+      --border: #e5e8ee;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo img {
+      width: 220px;
+      max-height: 60px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #525d70;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-cta {
+      padding: 11px 18px;
+      border-radius: 8px;
+      background: var(--navy);
+      color: white !important;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        radial-gradient(
+          circle at 82% 15%,
+          rgba(83, 108, 200, 0.18),
+          transparent 30%
+        ),
+        linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+      color: white;
+      padding: 115px 0 120px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #aebaff;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(46px, 6vw, 72px);
+      line-height: 1.04;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 18px;
+      color: #cbd3e2;
+    }
+
+    .hero-actions {
+      margin-top: 34px;
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      min-height: 48px;
+      padding: 0 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.22s ease;
+    }
+
+    .btn-primary {
+      background: white;
+      color: var(--navy);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.3);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-message {
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.055);
+      padding: 34px;
+      border-radius: 18px;
+    }
+
+    .hero-message small {
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      font-size: 10px;
+      color: #abb5ca;
+      font-weight: 700;
+    }
+
+    .hero-message h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 34px;
+      line-height: 1.2;
+      margin: 15px 0;
+    }
+
+    .hero-message p {
+      font-size: 15px;
+      color: #c1c9d9;
+    }
+
+    /* PROOF */
+
+    .proof {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .proof-item {
+      text-align: center;
+      padding: 27px 18px;
+      border-right: 1px solid var(--border);
+    }
+
+    .proof-item:last-child {
+      border-right: none;
+    }
+
+    .proof-number {
+      font-family: "Playfair Display", Georgia, serif;
+      color: var(--navy);
+      font-size: 35px;
+    }
+
+    .proof-label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-label {
+      color: var(--blue);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 44px;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 17px;
+    }
+
+    .section-text {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* WHAT WE PROVIDE */
+
+    .provide {
+      background: var(--background);
+    }
+
+    .provide-grid {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .provide-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 31px;
+      transition: .22s ease;
+    }
+
+    .provide-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 35px rgba(16, 26, 51, .07);
+    }
+
+    .provide-card h3 {
+      color: var(--navy);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .provide-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 5px 8px;
+      border-radius: 6px;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+    }
+
+    /* DIFFERENCE */
+
+    .difference {
+      background: white;
+    }
+
+    .difference-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .statement {
+      border-left: 3px solid var(--blue);
+      padding-left: 22px;
+      font-family: "Playfair Display", Georgia, serif;
+      color: var(--navy);
+      font-size: 31px;
+      line-height: 1.35;
+    }
+
+    .difference-copy p {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    /* MISSION / VISION */
+
+    .purpose {
+      background: var(--background);
+    }
+
+    .purpose-grid {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .purpose-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 38px;
+    }
+
+    .purpose-card small {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .purpose-card h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 30px;
+      color: var(--navy);
+      margin: 14px 0;
+      line-height: 1.25;
+    }
+
+    .purpose-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* DIGITAL SERVICES */
+
+    .digital {
+      background: var(--navy);
+      color: white;
+    }
+
+    .digital .section-label {
+      color: #aebaff;
+    }
+
+    .digital .section-title {
+      color: white;
+    }
+
+    .digital .section-text {
+      color: #c1c9d9;
+    }
+
+    .digital-grid {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .digital-card {
+      padding: 26px;
+      border: 1px solid rgba(255,255,255,.11);
+      background: rgba(255,255,255,.05);
+      border-radius: 13px;
+    }
+
+    .digital-card h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .digital-card p {
+      color: #aeb7ca;
+      font-size: 13px;
+    }
+
+    /* ASSESSMENT */
+
+    .assessment {
+      background: var(--background);
+    }
+
+    .assessment-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 45px;
+      padding: 48px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .assessment-box .btn-primary {
+      background: var(--navy);
+      color: white;
+      white-space: nowrap;
+    }
+
+    /* COMMUNITY */
+
+    .community {
+      background: white;
+      text-align: center;
+    }
+
+    .community-inner {
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .community-inner .section-text {
+      margin: auto;
+    }
+
+    .community-actions {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .community-primary {
+      background: var(--navy);
+      color: white;
+    }
+
+    .community-secondary {
+      border: 1px solid var(--border);
+      color: var(--navy);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #0a1225;
+      color: white;
+      padding: 40px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-logo img {
+      width: 205px;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: #9ea8bc;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .difference-grid,
+      .assessment-box {
+        grid-template-columns: 1fr;
+      }
+
+      .provide-grid,
+      .purpose-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .digital-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .assessment-box {
+        padding: 32px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      section {
+        padding: 72px 0;
+      }
+
+      .hero {
+        padding: 80px 0 85px;
+      }
+
+      .hero h1 {
+        font-size: 44px;
+      }
+
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .proof-item:last-child {
+        border-bottom: none;
+      }
+
+      .digital-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .logo img {
+        width: 185px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+  <div class="container nav-inner">
+
+    <a href="#" class="logo">
+      <img src="logo.png" alt="Scholarship Success Pathway">
+    </a>
+
+    <div class="nav-links">
+      <a href="#provide">What We Provide</a>
+      <a href="#about">About Us</a>
+      <a href="#mission">Mission</a>
+      <a href="#vision">Vision</a>
+
+      <a
+        href="https://RaghadRashed1.github.io/scholarship-readiness-assessment/"
+        target="_blank"
+        class="nav-cta"
+      >
+        Take the Assessment
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <div class="eyebrow">
+        Scholarship Success Pathway
+      </div>
+
+      <h1>
+        More than finding opportunities. A pathway to reaching them.
+      </h1>
+
+      <p>
+        We help students discover educational opportunities, understand
+        their options, strengthen their profiles, and navigate applications
+        with practical and personalized support.
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="#provide" class="btn btn-primary">
+          Explore What We Provide
+        </a>
+
+        <a
+          href="https://RaghadRashed1.github.io/scholarship-readiness-assessment/"
+          target="_blank"
+          class="btn btn-outline"
+        >
+          Assess Your Profile
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-message">
+
+      <small>Our approach</small>
+
+      <h2>
+        From the first question to the next step.
+      </h2>
+
+      <p>
+        Every student starts somewhere. Our role is to make the journey
+        clearer, more accessible, and easier to navigate — from thinking
+        about your goals to preparing and applying with confidence.
+      </p>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- PROOF -->
+
+<section class="proof">
+
+  <div class="container proof-grid">
+
+    <div class="proof-item">
+      <div class="proof-number">300+</div>
+      <div class="proof-label">
+        Students already part of our community
+      </div>
+    </div>
+
+    <div class="proof-item">
+      <div class="proof-number">4</div>
+      <div class="proof-label">
+        Scholarships received by our founder
+      </div>
+    </div>
+
+    <div class="proof-item">
+      <div class="proof-number">A–Z</div>
+      <div class="proof-label">
+        Personalized student guidance
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- WHAT WE PROVIDE -->
+
+<section id="provide" class="provide">
+
+  <div class="container">
+
+    <div class="section-label">
+      What We Provide
+    </div>
+
+    <h2 class="section-title">
+      Support for every stage of your journey.
+    </h2>
+
+    <p class="section-text">
+      We bring together information, guidance, resources, and practical
+      support so students can approach educational opportunities with
+      greater clarity and confidence.
+    </p>
+
+
+    <div class="provide-grid">
+
+      <div class="provide-card">
+
+        <span class="tag">Access</span>
+
+        <h3>
+          Scholarship & Opportunity Access
+        </h3>
+
+        <p>
+          We help students discover and understand scholarships and
+          educational opportunities that may align with their goals,
+          background, and academic plans.
+        </p>
+
+      </div>
+
+
+      <div class="provide-card">
+
+        <span class="tag">Guidance</span>
+
+        <h3>
+          Step-by-Step Guidance
+        </h3>
+
+        <p>
+          Personalized guidance from understanding where to begin and
+          identifying suitable opportunities to preparing and navigating
+          the application journey.
+        </p>
+
+      </div>
+
+
+      <div class="provide-card">
+
+        <span class="tag">Affordable</span>
+
+        <h3>
+          Application Support
+        </h3>
+
+        <p>
+          Affordable assistance for students who need support understanding
+          application requirements, completing forms, and approaching the
+          process from start to finish.
+        </p>
+
+      </div>
+
+
+      <div class="provide-card">
+
+        <span class="tag">Free Resources</span>
+
+        <h3>
+          Guides, Tips & Educational Resources
+        </h3>
+
+        <p>
+          Accessible educational content and practical resources designed
+          to help students learn, prepare independently, and make more
+          informed decisions.
+        </p>
+
+      </div>
+
+
+      <div class="provide-card">
+
+        <span class="tag">Development</span>
+
+        <h3>
+          Profile Development
+        </h3>
+
+        <p>
+          Helping students understand their strengths, identify areas for
+          improvement, and intentionally build a stronger profile over time.
+        </p>
+
+      </div>
+
+
+      <div class="provide-card">
+
+        <span class="tag">Coming Soon</span>
+
+        <h3>
+          Digital Services & Tools
+        </h3>
+
+        <p>
+          Practical digital products and tools designed to make scholarship
+          preparation more accessible, structured, and affordable.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- DIFFERENCE -->
+
+<section id="about" class="difference">
+
+  <div class="container difference-grid">
+
+    <div>
+
+      <div class="section-label">
+        Our Difference
+      </div>
+
+      <div class="statement">
+        We don't just share opportunities. We guide students through the journey.
+      </div>
+
+    </div>
+
+
+    <div class="difference-copy">
+
+      <p>
+        Scholarship Success Pathway was created from real scholarship
+        experience and direct work with students.
+      </p>
+
+      <p>
+        Our founder has personally received four scholarships and has
+        supported students through their own scholarship journeys. Today,
+        the initiative has grown into a community of more than 300 students.
+      </p>
+
+      <p>
+        Our approach is personal. Rather than simply sending students
+        scholarship links, we communicate with them, understand their
+        goals, help them identify suitable opportunities, and support them
+        step by step through the process.
+      </p>
+
+      <p>
+        The goal is not simply to help a student submit one application.
+        It is to help them understand their potential, become more prepared,
+        and develop the confidence and skills to pursue future opportunities.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MISSION + VISION -->
+
+<section id="mission" class="purpose">
+
+  <div class="container">
+
+    <div class="section-label">
+      Our Purpose
+    </div>
+
+    <h2 class="section-title">
+      Why Scholarship Success Pathway exists.
+    </h2>
+
+
+    <div class="purpose-grid">
+
+      <div class="purpose-card">
+
+        <small>Our Mission</small>
+
+        <h3>
+          Make opportunity more accessible.
+        </h3>
+
+        <p>
+          To empower and inspire students by providing accessible
+          scholarship information, practical resources, and personalized
+          step-by-step guidance that helps them confidently navigate
+          educational opportunities and move closer to their goals.
+        </p>
+
+      </div>
+
+
+      <div class="purpose-card" id="vision">
+
+        <small>Our Vision</small>
+
+        <h3>
+          A future where every student can pursue their potential.
+        </h3>
+
+        <p>
+          We envision a future where students, regardless of their
+          financial background or access to professional guidance, can
+          discover opportunities, develop their potential, and pursue
+          the education and future they aspire to.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- DIGITAL SERVICES -->
+
+<section class="digital">
+
+  <div class="container">
+
+    <div class="section-label">
+      What We're Building
+    </div>
+
+    <h2 class="section-title">
+      Making the pathway easier to navigate.
+    </h2>
+
+    <p class="section-text">
+      Our next stage is focused on building digital services that make
+      scholarship preparation more accessible, practical, and affordable.
+    </p>
+
+
+    <div class="digital-grid">
+
+      <div class="digital-card">
+
+        <h3>
+          Profile Assessment
+        </h3>
+
+        <p>
+          Understand your current scholarship readiness and identify
+          areas to strengthen.
+        </p>
+
+      </div>
+
+
+      <div class="digital-card">
+
+        <h3>
+          Digital Guides
+        </h3>
+
+        <p>
+          Structured resources that help students navigate common
+          scholarship and application challenges.
+        </p>
+
+      </div>
+
+
+      <div class="digital-card">
+
+        <h3>
+          Application Resources
+        </h3>
+
+        <p>
+          Practical tools and materials designed to make preparation
+          clearer and more manageable.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ASSESSMENT -->
+
+<section class="assessment">
+
+  <div class="container">
+
+    <div class="assessment-box">
+
+      <div>
+
+        <div class="section-label">
+          Start With Yourself
+        </div>
+
+        <h2 class="section-title">
+          How scholarship-ready are you?
+        </h2>
+
+        <p class="section-text">
+          Take our Scholarship Profile & Readiness Assessment to identify
+          your current strengths, discover your development priorities,
+          and understand what to work on next.
+        </p>
+
+      </div>
+
+
+      <a
+        href="https://RaghadRashed1.github.io/scholarship-readiness-assessment/"
+        target="_blank"
+        class="btn btn-primary"
+      >
+        Take the Assessment
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- COMMUNITY -->
+
+<section id="community" class="community">
+
+  <div class="container community-inner">
+
+    <div class="section-label">
+      Our Community
+    </div>
+
+    <h2 class="section-title">
+      Join 300+ students already on the pathway.
+    </h2>
+
+    <p class="section-text">
+      Stay connected to scholarship opportunities, educational resources,
+      guidance, and updates through our growing student community.
+    </p>
+
+
+    <div class="community-actions">
+
+      <a
+        href="https://chat.whatsapp.com/JCuO7GZH5LjAumdtIm8j65"
+        target="_blank"
+        class="btn community-primary"
+      >
+        Join WhatsApp Community
+      </a>
+
+      <a
+        href="https://www.instagram.com/scholarship.success.pathway/"
+        target="_blank"
+        class="btn community-secondary"
+      >
+        Follow on Instagram
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <a href="#" class="footer-logo">
+      <img src="logo.png" alt="Scholarship Success Pathway">
+    </a>
+
+    <div class="footer-copy">
+      © 2026 Scholarship Success Pathway. All rights reserved.
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
